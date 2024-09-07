@@ -2,7 +2,10 @@ import java.io.*;
 import java.net.*;
 public class Client {
     public static void main(String[] args) {
-        if (args.length != 3) System.exit(1);
+        if (args.length != 3) {
+            System.out.println("Requires 3 arguments (host, port, question) to run.");
+            System.exit(1);
+        }
         try {
             Socket s = new Socket(args[0], Integer.parseInt(args[1]));
             InputStream inputStream = s.getInputStream();
