@@ -43,7 +43,7 @@ public class Magic8BallServer {
                 PrintWriter out = new PrintWriter(outputStream, true);
                 Random random = new Random();
                 String response = RESPONSES[random.nextInt(RESPONSES.length)];
-                out.println(response);
+                out.println(response + " (" + InetAddress.getLocalHost().getHostAddress() + ")");
                 out.close();
                 clientSocket.close();
             }
