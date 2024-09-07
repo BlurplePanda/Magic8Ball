@@ -1,6 +1,31 @@
 import java.io.*;
 import java.net.*;
+import java.util.Random;
+
 public class Server {
+    private static final String[] RESPONSES = {
+            "It is certain",
+            "Reply hazy, try again",
+            "Don’t count on it",
+            "It is decidedly so",
+            "Ask again later",
+            "My reply is no",
+            "Without a doubt",
+            "Better not tell you now",
+            "My sources say no",
+            "Yes definitely",
+            "Cannot predict now",
+            "Outlook not so good",
+            "You may rely on it",
+            "Concentrate and ask again",
+            "Very doubtful",
+            "As I see it, yes",
+            "Most likely",
+            "Outlook good",
+            "Yes",
+            "Signs point to yes"
+    };
+
     public static void main(String[] args) {
         if (args.length != 1) System.exit(1);
         try {
@@ -10,12 +35,13 @@ public class Server {
                 System.out.println("Connection from " + clientSocket.getInetAddress());
                 OutputStream outputStream = clientSocket.getOutputStream();
                 PrintWriter out = new PrintWriter(outputStream, true);
-                out.println("testing 123");
+                Random random = new Random();
+                String response = RESPONSES[random.nextInt(RESPONSES.length)];
+                out.println(response);
                 out.close();
                 clientSocket.close();
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
