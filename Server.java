@@ -27,7 +27,10 @@ public class Server {
     };
 
     public static void main(String[] args) {
-        if (args.length != 1) System.exit(1);
+        if (args.length != 1) {
+            System.out.println("Requires 1 argument (port number) to run.");
+            System.exit(1);
+        }
         try {
             ServerSocket serverSocket = new ServerSocket(Integer.parseInt(args[0]));
             while (true) {
