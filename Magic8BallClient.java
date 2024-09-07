@@ -1,6 +1,6 @@
 import java.io.*;
 import java.net.*;
-public class Client {
+public class Magic8BallClient {
     public static void main(String[] args) {
         if (args.length != 3) {
             System.out.println("Requires 3 arguments (host, port, question) to run.");

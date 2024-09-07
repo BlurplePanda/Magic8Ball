@@ -2,7 +2,7 @@ import java.io.*;
 import java.net.*;
 import java.util.Random;
 
-public class Server {
+public class Magic8BallServer {
     private static final String[] RESPONSES = {
             "It is certain",
             "Reply hazy, try again",
