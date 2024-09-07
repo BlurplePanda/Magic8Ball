@@ -39,7 +39,6 @@ public class Server {
             ServerSocket serverSocket = new ServerSocket(Integer.parseInt(args[0]));
             while (true) {
                 Socket clientSocket = serverSocket.accept();
-                System.out.println("Connection from " + clientSocket.getInetAddress());
                 OutputStream outputStream = clientSocket.getOutputStream();
                 PrintWriter out = new PrintWriter(outputStream, true);
                 Random random = new Random();
