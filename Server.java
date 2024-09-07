@@ -31,6 +31,10 @@ public class Server {
             System.out.println("Requires 1 argument (port number) to run.");
             System.exit(1);
         }
+        else if (Integer.parseInt(args[0]) < 1024) {
+            System.out.println("Port number cannot be between 0-1023.");
+            System.exit(1);
+        }
         try {
             ServerSocket serverSocket = new ServerSocket(Integer.parseInt(args[0]));
             while (true) {
